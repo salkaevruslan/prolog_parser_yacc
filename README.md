@@ -3,7 +3,7 @@
 ```
 python3 parser.py filename
 ```
-## Запуск тестов
+## Тесты
 ```
 python3 parser.py tests
 ```
