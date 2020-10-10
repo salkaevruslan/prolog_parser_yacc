@@ -1,0 +1,7 @@
+relation
+	head
+		atom
+			identifier = f
+	body
+		atom
+			identifier = a

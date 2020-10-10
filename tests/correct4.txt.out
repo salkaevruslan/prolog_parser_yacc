@@ -1,0 +1,19 @@
+relation
+	head
+		atom
+			identifier = f
+	body
+		atom
+			identifier = a
+			atom
+				identifier = b
+relation
+	head
+		atom
+			identifier = f
+	body
+		conjunction
+			atom
+				identifier = a
+			atom
+				identifier = b

@@ -1,0 +1,12 @@
+relation
+	head
+		atom
+			identifier = f
+			atom
+				identifier = a
+	body
+		disjunction
+			atom
+				identifier = c
+			atom
+				identifier = d
