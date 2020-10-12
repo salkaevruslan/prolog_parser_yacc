@@ -3,10 +3,10 @@ relation
 		atom
 			identifier = f
 			atom
-				identifier = a
+				atom
+					atom
+						identifier = a
 	body
 		disjunction
-			atom
-				identifier = c
-			atom
-				identifier = d
+			identifier = c
+			identifier = d

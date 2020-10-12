@@ -1,0 +1,3 @@
+f :- first, second; third, extra (hello ((world))) wot, he.
+a b c.
+a (b c).

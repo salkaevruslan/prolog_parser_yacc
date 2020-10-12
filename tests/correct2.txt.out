@@ -1,7 +1,5 @@
 relation
 	head
-		atom
-			identifier = f
+		identifier = f
 	body
-		atom
-			identifier = a
+		identifier = a

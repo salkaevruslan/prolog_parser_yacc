@@ -1,0 +1,32 @@
+relation
+	head
+		identifier = f
+	body
+		disjunction
+			conjunction
+				identifier = first
+				identifier = second
+			conjunction
+				identifier = third
+				conjunction
+					atom
+						identifier = extra
+						atom
+							identifier = hello
+							atom
+								atom
+									identifier = worldidentifier = wot
+					identifier = he
+relation
+	head
+		atom
+			identifier = a
+			identifier = b
+			identifier = c
+relation
+	head
+		atom
+			identifier = a
+			atom
+				identifier = b
+				identifier = c

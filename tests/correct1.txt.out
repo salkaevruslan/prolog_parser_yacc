@@ -1,4 +1,3 @@
 relation
 	head
-		atom
-			identifier = f
+		identifier = f

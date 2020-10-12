@@ -27,22 +27,38 @@ def p_relation(p):
 
 def p_atom(p):
   '''atom : ID
-          | ID bracket_atom'''
+          | ID atom_end'''
   if len(p) == 2:
-    p[0] = 'atom\n' + add_tab('identifier = ' + p[1])
+    p[0] = 'identifier = ' + p[1]
   elif len(p) == 3:
     p[0] = 'atom\n' + add_tab('identifier = ' + p[1] + '\n' + p[2])
 
 
 def p_bracket_atom(p):
   '''bracket_atom : LEFTBRACKET bracket_atom RIGHTBRACKET
-                  | atom'''
+                  | ID
+                  | ID atom_end'''
   if len(p) == 2:
-    p[0] = p[1]
+    p[0] = 'identifier = ' + p[1]
+  elif len(p) ==3:
+    p[0] = 'identifier = ' + p[1] + '\n' + p[2]
   elif len(p) == 4:
-    p[0] = p[2]
+    p[0] = 'atom\n' + add_tab(p[2])
 
 
+def p_atom_end(p):
+  '''atom_end : ID
+              | ID atom_end
+              | LEFTBRACKET bracket_atom RIGHTBRACKET
+              | LEFTBRACKET bracket_atom RIGHTBRACKET atom_end'''
+  if len(p) == 2:
+    p[0] = 'identifier = ' + p[1]
+  elif len(p) ==3:
+    p[0] = 'identifier = ' + p[1] + '\n' + p[2]
+  elif len(p) == 4:
+    p[0] = 'atom\n' + add_tab(p[2])
+  elif len(p) == 5:
+    p[0] = 'atom\n' + add_tab(p[2]) + p[4]
 
 
 def p_disjunction(p):
@@ -113,5 +129,11 @@ if sys.argv[1] == 'tests':
 else:
   sys.stdout = open(sys.argv[1] + '.out', 'w')
   with open(sys.argv[1], 'r') as inputfile:
-    result = parser.parse(inputfile.read())
-    print(result)
+    try:
+      result = parser.parse(inputfile.read())
+      print(result)
+    except SyntaxError:
+      sys.stdout = sys.__stdout__
+      type, value, traceback = sys.exc_info()
+      print(value)
+

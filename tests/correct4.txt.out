@@ -1,19 +1,18 @@
 relation
 	head
-		atom
-			identifier = f
+		identifier = f
 	body
 		atom
 			identifier = a
 			atom
-				identifier = b
+				atom
+					atom
+						atom
+							identifier = b
 relation
 	head
-		atom
-			identifier = f
+		identifier = f
 	body
 		conjunction
-			atom
-				identifier = a
-			atom
-				identifier = b
+			identifier = a
+			identifier = b
